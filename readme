@@ -1,0 +1,21 @@
+# L0 compaction 입력
+python3 print_cpt_in_ascii.py --log /data/rocks/db/LOG --tag L0Coverage-CPT-IN --sub core --pad 9
+
+# FLUSH-OUT (flush 하는거)
+python3 print_cpt_in_ascii.py --log /data/rocks/db/LOG --tag L0Coverage-FLUSH-OUT --sub core --pad 9
+
+# FLUSH-POST (flush 후 l0 파일까지)
+python3 print_cpt_in_ascii.py --log /data/rocks/db/LOG --tag L0Coverage-FLUSH-POST --sub core --pad 9
+
+
+# L0 compaction 입력 로그 파일에서 확인
+grep "\[L0Coverage-CPT-IN\]" /data/rocks/db/LOG
+
+# FLUSH-OUT 로그 파일에서 확인
+grep "\[L0Coverage-FLUSH-OUT\]"  /data/rocks/db/LOG*
+
+# FLUSH-POST 로그 파일에서 확인
+grep "\[L0Coverage-FLUSH-POST\]" /data/rocks/db/LOG*
+
+
+
