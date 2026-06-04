@@ -16,25 +16,6 @@ This project is based on RocksDB, developed and maintained by Facebook Database 
 - **Intra-L0 Compaction**: Merges overlapping files within L0 to reduce read amplification when L0-to-L1 compaction is blocked.
 - **Range-Aware L0 Scan**: Lazily opens L0 file iterators based on key-range overlap, reducing unnecessary I/O during range scans.
 
----
-
-## Build
-
-```bash
-# Release build (static library)
-make static_lib
-
-# With architecture portability
-PORTABLE=1 make static_lib
-
-# Debug build with all tools
-make all
-
-# Run tests
-make check
-```
-
----
 
 ## Custom Options
 
