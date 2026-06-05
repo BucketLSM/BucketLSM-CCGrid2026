@@ -1,0 +1,12 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=/usr/local/lib
+
+Name: rocksdb
+Description: An embeddable persistent key-value store for fast storage
+Version:
+Libs: -L${libdir}  -ldl -lrocksdb
+Libs.private: -lpthread -lrt -ldl -lsnappy -lgflags -lz  -u zenfs_filesystem_reg
+Cflags: -I${includedir} -std=c++17  -faligned-new -DHAVE_ALIGNED_NEW -DROCKSDB_PLATFORM_POSIX -DROCKSDB_LIB_IO_POSIX  -DOS_LINUX -fno-builtin-memcmp -DROCKSDB_FALLOCATE_PRESENT -DSNAPPY -DGFLAGS=1 -DZLIB -DROCKSDB_MALLOC_USABLE_SIZE -DROCKSDB_PTHREAD_ADAPTIVE_MUTEX -DROCKSDB_BACKTRACE -DROCKSDB_RANGESYNC_PRESENT -DROCKSDB_SCHED_GETCPU_PRESENT -DROCKSDB_AUXV_GETAUXVAL_PRESENT -march=native  -DHAVE_UINT128_EXTENSION  -isystem third-party/gtest-1.8.1/fused-src
+Requires:  libzbd >= 1.5.0
